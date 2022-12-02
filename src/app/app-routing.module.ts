@@ -3,9 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginFormComponent, ResetPasswordFormComponent, CreateAccountFormComponent, ChangePasswordFormComponent } from './shared/components';
 import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { TasksComponent } from './pages/tasks/tasks.component';
-import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AnlageComponent } from './pages/anlage/anlage.component';
 import { TeilmodelleComponent } from './pages/teilmodelle/teilmodelle.component';
@@ -64,17 +62,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule],
+  imports: [RouterModule.forRoot(routes, { useHash: true }), 
+],
+    
   providers: [AuthGuardService],
   exports: [RouterModule],
   declarations: [
-    HomeComponent,
-    ProfileComponent,
-    TasksComponent,
-    DashboardComponent,
-    AnlageComponent,
-    TeilmodelleComponent,
-    DatenexportComponent
+   
   ]
 })
 export class AppRoutingModule { }

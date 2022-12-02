@@ -1,4 +1,25 @@
-<h2 class="content-block">Anlage</h2>
+<h2 class="content-block">Anlagen</h2>
 <div class="content-block">
-    <div class="dx-card responsive-paddings">Put your content here</div>
+    <div class="dx-card responsive-paddings">
+    <div class="dx-fieldset">
+        <div class="dx-fieldset-header">Anlagenauswahl</div>
+        <div class="dx-field">
+          <dx-lookup [items]="listAas" 
+          [value]="listAas"
+          (onValueChanged)="onValueChanged($event)">
+            <dxo-drop-down-options [showTitle]="false"></dxo-drop-down-options>
+          </dx-lookup>
+        </div>
+    </div>
+    <div>
+        <dx-button
+          stylingMode="outlined"
+          text="Log"
+          type="normal"
+          [width]="120"
+          (onClick)="log()"
+        >
+        </dx-button>
+      </div>
+    </div>
 </div>
