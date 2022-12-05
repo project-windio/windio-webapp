@@ -9,7 +9,7 @@ import { AasService } from 'src/app/services/aas.service';
 export class TeilmodelleComponent implements OnInit {
 
 selectedAas: string = "";
-submodelList: string[] = [];
+submodelList: any[] = [];
 
   constructor(private aasService: AasService) { }
 
@@ -19,9 +19,13 @@ submodelList: string[] = [];
     this.aasService.getSubmodels(this.selectedAas).subscribe(
       data => {
         console.log(data);
-        this.submodelList = data.aaslist;
+        this.submodelList = data;
       }
     );
   }
-
+  log(){
+    console.log("log");
+    console.log(this.submodelList);
+    console.log(this.submodelList.length);
+  }
 }

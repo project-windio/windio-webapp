@@ -1,11 +1,11 @@
-<h2 class="content-block">Anlagen</h2>
+<h2 class="content-block">Anlage</h2>
 <div class="content-block">
     <div class="dx-card responsive-paddings">
     <div class="dx-fieldset">
         <div class="dx-fieldset-header">Anlagenauswahl</div>
         <div class="dx-field">
           <dx-lookup [items]="listAas" 
-          [value]="listAas"
+          [value]="listAas[selectedAasIndex]"
           (onValueChanged)="onValueChanged($event)">
             <dxo-drop-down-options [showTitle]="false"></dxo-drop-down-options>
           </dx-lookup>
