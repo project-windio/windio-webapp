@@ -26,7 +26,15 @@
 }
 
 ::ng-deep .header-title .dx-item-content {
+  
   padding: 0;
+  margin: 0;
+}
+
+::ng-deep .aas-title .dx-item-content {
+  
+  padding: 0;
+  padding-left: 20px;
   margin: 0;
 }
 

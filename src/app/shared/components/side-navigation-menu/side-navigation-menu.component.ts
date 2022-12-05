@@ -4,6 +4,8 @@ import { DxTreeViewModule, DxTreeViewComponent } from 'devextreme-angular/ui/tre
 import { navigation } from '../../../app-navigation';
 
 import * as events from 'devextreme/events';
+import { AasService } from 'src/app/services/aas.service';
+
 
 @Component({
   selector: 'app-side-navigation-menu',
@@ -30,6 +32,8 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
 
     this.menu.instance.selectItem(value);
   }
+
+
 
   private _items!: Record <string, unknown>[];
   get items() {
@@ -64,7 +68,7 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef, private aasService: AasService) { }
 
   onItemClick(event: ItemClickEvent) {
     this.selectedItemChanged.emit(event);

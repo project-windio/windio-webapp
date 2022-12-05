@@ -16,6 +16,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DatenexportComponent } from './pages/datenexport/datenexport.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TeilmodelleComponent } from './pages/teilmodelle/teilmodelle.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { TeilmodelleComponent } from './pages/teilmodelle/teilmodelle.component'
     AppRoutingModule,
     HttpClientModule,
     DxButtonModule,
-    DxLookupModule
+    DxLookupModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatGridListModule
   ],
   providers: [
     AuthService,

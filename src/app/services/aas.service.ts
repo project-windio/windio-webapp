@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,8 @@ export class AasService {
   constructor(private httpClient: HttpClient) { }
 
   selectedAas: string = "";
+  private _selectedAasSource = new BehaviorSubject<string>("");
+  selectedAas$ = this._selectedAasSource.asObservable();
 
 
   public getAas(): Observable<any> {
@@ -26,6 +28,7 @@ export class AasService {
 
   public setAas(aas: string) {
     this.selectedAas = aas;
+    this._selectedAasSource.next(aas);
   }
 
   public getSelectedAas(): string {

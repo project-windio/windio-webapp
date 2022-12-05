@@ -7,6 +7,8 @@ import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 
 import { Router } from '@angular/router';
+import { AasService } from 'src/app/services/aas.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: 'header.component.html',
@@ -22,6 +24,9 @@ export class HeaderComponent implements OnInit {
 
   @Input()
   title!: string;
+
+  selectedAas!: string;
+  subscription:Subscription = new Subscription();
 
   user: IUser | null = { email: '' };
 
@@ -40,10 +45,13 @@ export class HeaderComponent implements OnInit {
     }
   }];
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private aasService: AasService) { }
 
   ngOnInit() {
     this.authService.getUser().then((e) => this.user = e.data);
+    this.subscription = this.aasService.selectedAas$
+    .subscribe(item => this.selectedAas = item)
+    //.subscribe(item => console.log("Subsc: " + item))
   }
 
   toggleMenu = () => {

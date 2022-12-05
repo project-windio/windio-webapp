@@ -1,6 +1,34 @@
 <h2 class="content-block">Teilmodelle</h2>
 <div class="content-block">
-    <div class="dx-card responsive-paddings">Put your content here <br> {{selectedAas}}
-    
+    <div class="dx-card responsive-paddings">
+        
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile *ngFor="let submodel of submodelList">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <mat-card-title>{{submodel.idShort}}</mat-card-title>
+                      <mat-card-subtitle>Teilmodell von {{selectedAas}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <!-- <p>ID: {{submodel.id.id}}</p> -->
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button>mehr</button>
+                    </mat-card-actions>
+                  </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+
     </div>
+    <div>
+        <dx-button
+          stylingMode="outlined"
+          text="Log"
+          type="normal"
+          [width]="120"
+          (onClick)="log()"
+        >
+        </dx-button>
+      </div>
+    
 </div>
