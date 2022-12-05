@@ -12,17 +12,23 @@ export class AasService {
   selectedAas: string = "";
   private _selectedAasSource = new BehaviorSubject<string>("");
   selectedAas$ = this._selectedAasSource.asObservable();
-
+  baseUrl = 'http://162.55.178.76:6100/';
 
   public getAas(): Observable<any> {
     console.log("Api call getAas");
-    return this.httpClient.get('http://localhost:5095/server/listaas');
+    return this.httpClient.get(this.baseUrl + 'server/listaas');
   }
 
   public getSubmodels(aasName: string): Observable<any> {
-    console.log("Api call getAas");
-    console.log("TesT"+aasName.trim()+"Test")
-    var url = "http://localhost:5095/aas/" + aasName.trim() ;
+    console.log("Api call getSubmodels");
+    var url = this.baseUrl  + "aas/" + aasName.trim() ;
+    return this.httpClient.get(url);
+  }
+
+  public getSubmodelDetails(aasName: string, submodelName: string): Observable<any> {
+    console.log("Api call getSubmodelDetails");
+    var url = this.baseUrl + "aas/" + aasName.trim() + "/submodels/" + submodelName.trim() + "/table";
+    console.log(url);
     return this.httpClient.get(url);
   }
 

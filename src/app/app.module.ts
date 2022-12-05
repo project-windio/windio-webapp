@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 import {
   DxButtonModule,
-  DxLookupModule
+  DxLookupModule,
+  DxDataGridModule,
 } from "devextreme-angular";
 import { AppComponent } from './app.component';
 import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule } from './layouts';
@@ -47,6 +48,7 @@ import { TeilmodellDetailsComponent } from './pages/teilmodelle/details/teilmode
     HttpClientModule,
     DxButtonModule,
     DxLookupModule,
+    DxDataGridModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,

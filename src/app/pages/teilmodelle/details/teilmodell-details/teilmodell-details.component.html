@@ -1,1 +1,35 @@
-<p>teilmodell-details works!</p>
+<h2 class="content-block">Teilmodell {{submodelName}} von {{selectedAas}}:</h2>
+<div class="content-block">
+    <dx-button
+      stylingMode="outlined"
+      text="Zurück" 
+      icon="back"
+      type="normal"
+      [width]="120"
+      (onClick)="back()"
+    >
+    </dx-button>
+  </div>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+        <dx-data-grid id="gridContainer" 
+        [dataSource]="submodelDetailsList" 
+        [showBorders]="true"
+        keyExpr="ID"
+        >
+        <dxo-editing
+    mode="row"
+    [allowUpdating]="true"
+    [allowDeleting]="true"
+    [allowAdding]="true"
+  >
+  </dxo-editing>
+        <dxi-column dataField="ID" caption="Nr."></dxi-column>
+        <dxi-column dataField="idShorts" caption="Feld"></dxi-column>
+        <dxi-column dataField="value" caption="Wert"></dxi-column>
+        </dx-data-grid>
+    </div>
+
+
+    
+</div>

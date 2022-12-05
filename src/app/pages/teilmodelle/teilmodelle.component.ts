@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AasService } from 'src/app/services/aas.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class TeilmodelleComponent implements OnInit {
 selectedAas: string = "";
 submodelList: any[] = [];
 
-  constructor(private aasService: AasService) { }
+  constructor(private aasService: AasService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log("onInit TeilmodelleComponent"); 
@@ -30,7 +31,8 @@ submodelList: any[] = [];
   }
 
   nav(submodelName: string){
-    console.log("nav to " + submodelName);
+    //console.log("nav to " + submodelName);
+    this.router.navigate(['details'],{relativeTo: this.activatedRoute, queryParams: {submodel: submodelName}});
     
   }
 }
