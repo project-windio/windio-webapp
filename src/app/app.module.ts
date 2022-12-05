@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { TeilmodellDetailsComponent } from './pages/teilmodelle/details/teilmodell-details/teilmodell-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     DashboardComponent,
     DatenexportComponent,
     HomeComponent,
-    TeilmodelleComponent
+    TeilmodelleComponent,
+    TeilmodellDetailsComponent
   ],
   imports: [
     BrowserModule,

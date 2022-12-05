@@ -8,6 +8,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AnlageComponent } from './pages/anlage/anlage.component';
 import { TeilmodelleComponent } from './pages/teilmodelle/teilmodelle.component';
 import { DatenexportComponent } from './pages/datenexport/datenexport.component';
+import { TeilmodellDetailsComponent } from './pages/teilmodelle/details/teilmodell-details/teilmodell-details.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'pages/teilmodelle',
     component: TeilmodelleComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/teilmodelle/details',
+    component: TeilmodellDetailsComponent,
     canActivate: [ AuthGuardService ]
   },
   {

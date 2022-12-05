@@ -28,4 +28,9 @@ submodelList: any[] = [];
     console.log(this.submodelList);
     console.log(this.submodelList.length);
   }
+
+  nav(submodelName: string){
+    console.log("nav to " + submodelName);
+    
+  }
 }
